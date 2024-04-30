@@ -1,0 +1,97 @@
+body {
+  background-image: url("https://images.pexels.com/photos/3783385/pexels-photo-3783385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: 100%;
+}
+.application {
+  margin: 60px auto;
+  max-width: 800px;
+}
+.container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 30px 50px #41326414;
+  font-family: Cerebri-Sans, Helvetica, Arial, sans-serif;
+  padding: 40px;
+}
+header {
+  border-bottom: 1px solid #f9f7fe;
+  padding-bottom: 30px;
+}
+.search-field {
+  background: #cee3ea;
+  border: none;
+  border-radius: 7px;
+  color: #15242066;
+  font-size: 16px;
+  height: 50px;
+  padding: 15px 20px;
+  width: 75%;
+}
+.search-btn {
+  background: #6a8b9f;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  height: 50px;
+  padding: 15px 0;
+  width: 20%;
+  border-radius: 7px;
+  box-sizing: border-box;
+}
+main {
+  padding: 30px 0;
+}
+
+.current-temperature {
+  font-size: 48px;
+}
+
+.current-weather {
+  display: flex;
+  justify-content: space-between;
+}
+
+.current-city {
+  font-size: 38px;
+  font-weight: 900;
+  margin: 0;
+}
+.current-details {
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.current-details strong {
+  color: #bf3ec8;
+}
+
+.current-temperature-icon {
+  position: relative;
+  top: -8px;
+  font-size: 40px;
+  margin-right: 10px;
+}
+
+.current-temperature-value {
+  font-size: 80px;
+  font-weight: bold;
+}
+
+.current-temperature-unit {
+  font-size: 28px;
+  position: relative;
+  top: -38px;
+}
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  text-align: justify;
+  text-align-last: justify;
+  padding-inline-start: 20px;
+}
+li {
+  display: inline-block;
+}

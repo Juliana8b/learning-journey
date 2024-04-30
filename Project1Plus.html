@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <title>Document</title>
+  </head>
+  <link rel="stylesheet" href="src/style.css" />
+  <body>
+    <div class="application">
+      <div class="container">
+        <header>
+          <form id="search-form">
+            <input
+              type="search"
+              placeholder="Enter a city.."
+              required
+              class="search-field"
+              id="city-input" />
+            <input type="submit" value="Search" class="search-btn" />
+          </form>
+        </header>
+        <main>
+          <div class="current-weather">
+            <div>
+              <h1 class="current-city">Paris</h1>
+              <p class="current-details">
+                <span id="day-time">Saturday 15:32</span>,
+                <span id="condition">moderate rain</span> <br />
+                Humidity: <strong id="currentHumidity">87%</strong>, Wind:
+                <strong><span class="current-wind">7.2</span>km/h</strong>
+              </p>
+            </div>
+            <div class="current-temperature">
+              <span class="current-temperature-icon">☀️</span
+              ><span class="current-temperature-value">24</span
+              ><span class="current-temperature-unit">°C</span>
+            </div>
+          </div>
+        </main>
+        <div class="week-forecast">
+          <ul class="forecast">
+            <li class="weekday">
+              Tue: ☀️ <br />
+              <span class="degree"><strong>15°C - </strong>7°C</span>
+            </li>
+            <li class="weekday">
+              Wed: 🌧️ <br /><span class="degree"
+                ><strong>10°C - </strong>4°C</span
+              >
+            </li>
+            <li class="weekday">
+              Thu: 🌧️ <br />
+              <span class="degree"><strong>12°C - </strong>8°C</span>
+            </li>
+            <li class="weekday">
+              Fri: 🌧️ <br />
+              <span class="degree"><strong>14°C - </strong>7°C</span>
+            </li>
+            <li class="weekday">
+              Sat: 🌧️ <br /><span class="degree"
+                ><strong>9°C - </strong>5°C</span
+              >
+            </li>
+          </ul>
+        </div>
+        <footer>
+          This project was coded by
+          <a href="https://www.shecodes.io/">Iuliana Burakova</a> and is
+          <a href="https://github.com/shecodesio/weather"
+            >open-sourced on GitHub</a
+          >
+          and
+          <a href="https://shecodes-weather.netlify.app/">hosted on Netlify</a>
+        </footer>
+      </div>
+    </div>
+    <script src="src/app.js"></script>
+  </body>
+</html>
