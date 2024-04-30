@@ -91,6 +91,7 @@ ul {
   text-align: justify;
   text-align-last: justify;
   padding-inline-start: 20px;
+  margin-bottom: 30px;
 }
 li {
   display: inline-block;
