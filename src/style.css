@@ -68,25 +68,25 @@ main {
 .current-details strong {
   color: #bf3ec8;
 }
-
+.current-temperature {
+  display: flex;
+}
 .current-temperature-icon {
-  position: relative;
-  top: -8px;
-  font-size: 40px;
-  margin-right: 10px;
+  width: 100px;
+  height: 100px;
+  margin-top: -5px;
 }
 
 .current-temperature-value {
-  font-size: 80px;
+  font-size: 86px;
   font-weight: bold;
   color: #47414d;
+  line-height: 88px;
 }
 
 .current-temperature-unit {
   font-size: 28px;
-  position: relative;
-  top: -38px;
-  color: #47414d;
+  margin-top: 6px;
 }
 a {
   color: #bf3ec8;
