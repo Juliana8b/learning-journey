@@ -1,42 +1,43 @@
 body {
-  background-image: url("https://images.pexels.com/photos/3783385/pexels-photo-3783385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-image: url("sky1.jpg");
   background-size: 100%;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .application {
   margin: 60px auto;
-  max-width: 800px;
+  max-width: 750px;
 }
 .container {
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 30px 50px #41326414;
-  font-family: Cerebri-Sans, Helvetica, Arial, sans-serif;
   padding: 40px;
+  padding-bottom: 25px;
 }
 header {
-  border-bottom: 1px solid #f9f7fe;
+  border-bottom: 1px solid #f3f1f8;
   padding-bottom: 30px;
 }
 .search-field {
-  background: #cee3ea;
+  background: #e8eff2;
   border: none;
   border-radius: 7px;
-  color: #15242066;
+  color: #37214366;
   font-size: 16px;
   height: 50px;
   padding: 15px 20px;
   width: 75%;
 }
 .search-btn {
-  background: #6a8b9f;
+  background: #8dabbd;
   border: none;
   font-size: 16px;
-  font-weight: 700;
   height: 50px;
   padding: 15px 0;
   width: 20%;
   border-radius: 7px;
   box-sizing: border-box;
+  color: #000000;
 }
 main {
   padding: 30px 0;
@@ -55,9 +56,10 @@ main {
   font-size: 38px;
   font-weight: 900;
   margin: 0;
+  color: #47414d;
 }
 .current-details {
-  color: rgba(39, 33, 66, 0.4);
+  color: rgb(52 42 72 / 40%);
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -77,22 +79,22 @@ main {
 .current-temperature-value {
   font-size: 80px;
   font-weight: bold;
+  color: #47414d;
 }
 
 .current-temperature-unit {
   font-size: 28px;
   position: relative;
   top: -38px;
+  color: #47414d;
 }
-ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  text-align: justify;
-  text-align-last: justify;
-  padding-inline-start: 20px;
-  margin-bottom: 30px;
+a {
+  color: #bf3ec8;
 }
-li {
-  display: inline-block;
+footer {
+  border-top: 1px solid #f3f1f8;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: rgb(0 0 0 / 50%);
 }
