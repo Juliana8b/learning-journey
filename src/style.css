@@ -95,24 +95,28 @@ a {
 .weather-forecast-data {
   display: flex;
   margin-top: 30px;
-  text-align: center;
   justify-content: space-around;
 }
 .weather-forecast-day {
   font-size: 16px;
   color: rgba(39, 33, 66, 0.4);
+  text-align: center;
 }
 .weather-forecast-temp {
   color: #bf3ec8;
   margin-top: 10px;
+  text-align: center;
   display: flex;
   justify-content: center;
 }
-.weather-forecast-temp-day {
+.weather-forecast-temp-max {
   padding: 0 10px;
+  font-weight: bolder;
 }
-.weather-forecast-temp-night {
+.weather-forecast-temp-min {
   padding: 0 10px;
+  font-weight: bolder;
+  opacity: 0.6;
 }
 footer {
   border-top: 1px solid #f3f1f8;
