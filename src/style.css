@@ -91,6 +91,9 @@ main {
 a {
   color: #bf3ec8;
 }
+.weather-forecast-data {
+  display: flex;
+}
 footer {
   border-top: 1px solid #f3f1f8;
   padding-top: 20px;
