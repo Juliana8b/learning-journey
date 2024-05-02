@@ -89,10 +89,30 @@ main {
   margin-top: 6px;
 }
 a {
-  color: #bf3ec8;
+  color: #8dabbd;
+  text-decoration: none;
 }
 .weather-forecast-data {
   display: flex;
+  margin-top: 30px;
+  text-align: center;
+  justify-content: space-around;
+}
+.weather-forecast-day {
+  font-size: 16px;
+  color: rgba(39, 33, 66, 0.4);
+}
+.weather-forecast-temp {
+  color: #bf3ec8;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.weather-forecast-temp-day {
+  padding: 0 10px;
+}
+.weather-forecast-temp-night {
+  padding: 0 10px;
 }
 footer {
   border-top: 1px solid #f3f1f8;
