@@ -6,8 +6,12 @@ function showTemperature(response) {
   let humidityElement = document.querySelector("#currentHumidity");
   let windElement = document.querySelector("#current-wind");
   let iconElement = document.querySelector("#current-temperature-icon");
+  let options = { weekday: "long", hour: "numeric", minute: "numeric" };
+  let localTimeString = new Intl.DateTimeFormat([], options).format(new Date());
+  let timeElement = document.querySelector("#day-time");
 
   cityElement.innerHTML = response.data.city;
+  timeElement.innerHTML = localTimeString;
   temperatureElement.innerHTML = Math.round(temperature);
   conditionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
@@ -17,8 +21,9 @@ function showTemperature(response) {
   getForecast(response.data.city);
 }
 
-let now = new Date();
-function dateTime() {
+function formatDate(date) {
+  let hour = date.getHours();
+  let minute = date.getMinutes();
   let days = [
     "Sunday",
     "Monday",
@@ -28,12 +33,12 @@ function dateTime() {
     "Friday",
     "Saturday",
   ];
+  let day = days[date.getDay()];
+  if (minute < 10) {
+    minute = `0${minute}`;
+  }
 
-  let day = days[now.getDay()];
-  let hour = now.getHours();
-  let minute = now.getMinutes().toString().padStart(2, "0");
-  let currentDetails = document.querySelector("#day-time");
-  currentDetails.innerHTML = `${day} ${hour}:${minute}`;
+  return `${day} ${hour}:${minute}`;
 }
 
 function citySearch(city) {
@@ -48,8 +53,12 @@ function changeCity(event) {
   citySearch(cityInput.value);
 }
 
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", changeCity);
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
 
 function getForecast(city) {
   let apiKey = "a0db461tcf90de7688b6aab936fao1ed";
@@ -58,36 +67,33 @@ function getForecast(city) {
 }
 
 function displayForecast(response) {
-  let currentDate = new Date();
-  let currentDayIndex = currentDate.getDay();
-
-  let weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
   let forecastHtml = "";
 
-  for (let i = 1; i <= 5; i++) {
-    let nextDayIndex = (currentDayIndex + i) % 7;
-    let nextDay = weekdays[nextDayIndex];
-
-    forecastHtml += `
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `
       <div class="col-2">
-        <div class="weather-forecast-day">${nextDay}</div>
-        <img
-          src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
-          class="weather-forecast-icon"
-        />
+        <div class="weather-forecast-day">${formatDay(day.time)}</div>
+         <img src="${day.condition.icon_url}" class="weather-forecast-icon" />
         <div class="weather-forecast-temp">
-          <div class="weather-forecast-temp-max">12°</div>
-          <div class="weather-forecast-temp-min">9°</div>
+          <div class="weather-forecast-temp-max">${Math.round(
+            day.temperature.maximum
+          )}º</div>
+          <div class="weather-forecast-temp-min">${Math.round(
+            day.temperature.minimum
+          )}º</div>
         </div>
       </div>
     `;
-  }
+    }
+  });
 
-  const forecastElement = document.querySelector("#forecast");
+  let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;
 }
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", changeCity);
 
 citySearch("Toronto");
-dateTime();
-displayForecast();
