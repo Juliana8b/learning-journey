@@ -49,5 +49,37 @@ function changeCity(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", changeCity);
 
+function displayForecast() {
+  let currentDate = new Date();
+  let currentDayIndex = currentDate.getDay();
+
+  let weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  let forecastHtml = "";
+
+  for (let i = 1; i <= 5; i++) {
+    let nextDayIndex = (currentDayIndex + i) % 7;
+    let nextDay = weekdays[nextDayIndex];
+
+    forecastHtml += `
+      <div class="col-2">
+        <div class="weather-forecast-day">${nextDay}</div>
+        <img
+          src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
+          class="weather-forecast-icon"
+        />
+        <div class="weather-forecast-temp">
+          <div class="weather-forecast-temp-max">12°</div>
+          <div class="weather-forecast-temp-min">9°</div>
+        </div>
+      </div>
+    `;
+  }
+
+  const forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
+
 citySearch("Toronto");
 dateTime();
+displayForecast();
